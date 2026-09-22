@@ -1,0 +1,31 @@
+[project]
+name = "asistente-virtual-github-prs"
+version = "0.1.0"
+description = "Asistente virtual en español para consultar pull requests de GitHub"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "PyGithub>=2.5.0",
+    "SpeechRecognition>=3.14.0",
+    "PyAudio>=0.2.14",
+    "pyjokes>=0.8.3",
+    "pyttsx3>=2.98",
+    "pywhatkit>=5.4",
+    "wikipedia>=1.4.0",
+    "yfinance>=0.2.54",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.0",
+]
+
+[project.scripts]
+asistente = "asistente.__main__:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["asistente"]
