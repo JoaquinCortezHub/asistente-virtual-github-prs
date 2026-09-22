@@ -6,6 +6,7 @@ import argparse
 import os
 
 from .assistant import VirtualAssistant
+from .audio import MicrophoneListener
 from .commands import CommandProcessor
 from .github_client import GitHubClientError, PullRequestService
 
@@ -32,10 +33,10 @@ def main() -> int:
         print(f"Error: {exc}")
         return 1
     processor = CommandProcessor(service)
-    VirtualAssistant(processor, mode=args.modo).run()
+    listener = MicrophoneListener()
+    VirtualAssistant(processor, mode=args.modo, listener=listener).run()
     return 0
 
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

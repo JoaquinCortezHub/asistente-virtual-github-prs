@@ -52,6 +52,14 @@ Modo voz:
 uv run python -m asistente --repo octocat/Hello-World --modo voz
 ```
 
+En Omarchy, el motor TTS de Linux se instala desde una terminal con:
+
+```bash
+omarchy pkg add espeak-ng
+```
+
+Si el auricular aparece conectado pero se usa el micrófono interno, seleccioná el micrófono Bluetooth desde el panel de audio o ejecutá `wpctl status` para identificarlo. El programa usa la fuente de audio predeterminada de PipeWire.
+
 También se puede usar `GITHUB_REPO=owner/repo` para no repetir `--repo`.
 
 Ejemplos de comandos:
@@ -73,4 +81,3 @@ uv run pytest
 ```
 
 Las pruebas usan objetos simulados para validar la interpretación de comandos, la clasificación de PRs y el manejo de revisiones sin depender de la red ni de un micrófono.
-
