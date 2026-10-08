@@ -81,3 +81,6 @@ uv run pytest
 ```
 
 Las pruebas usan objetos simulados para validar la interpretación de comandos, la clasificación de PRs y el manejo de revisiones sin depender de la red ni de un micrófono.
+
+## Prueba de PR
+Este pedazo de código no está en main.
